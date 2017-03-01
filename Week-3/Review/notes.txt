@@ -1,0 +1,5 @@
+confirm -> Alert Box with an ok and cancel
+	ok - > true boolean value
+	cancel -> false boolean value
+
+document.write -> writes on webpage and appends to whatever exists already
