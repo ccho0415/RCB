@@ -1,0 +1,12 @@
+.Blurb1,.Blurb2,.Blurb3{
+	font-family:"Lucida Console",Monaco, monospace;
+}
+.Blurb1{
+	font-weight: bold;
+}
+.Blurb2{
+	font-size: 24px;
+}
+.Blurb3{
+	line-height: 50px;
+}

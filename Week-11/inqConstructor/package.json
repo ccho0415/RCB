@@ -1,0 +1,15 @@
+{
+  "name": "inqconstructor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "inqConstructor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^3.0.1",
+    "lol-champions": "^7.1.0"
+  }
+}

@@ -1,0 +1,40 @@
+Tables:
+	Beers
+		id (primary key auto incrementing)
+		Name (var char)
+		Type (var char)
+		abv (decimal)
+		Relationships:
+			brewery has_one beers
+			beers belongs_to brewery
+		Foreign Keys:
+			brewery_id
+	Breweries:
+		id (primary key auto incrementing)
+		Owner (var char Default John)
+		name (var char)
+		Foreign Keys:
+			beer_id (integer, not null)
+
+
+	Distributors
+		Name
+		Location
+		Foreign Keys:
+			brewery_id
+SQL Code:
+	CREATE TABLES beers(
+	id INTEGER(11) AUTO_INCREMENT NOT NULL,
+	name VARCHAR(30) NOT NULL,
+	type VARCHAR(30) NOT NULL,
+	abv DECIMAL(),
+	PRIMARY KEY(id)
+	);
+	CREATE TABLES breweries(
+	id INTEGER(11) AUTO_INCREMENT NOT NULL,
+	owner VARCHAR (30) NOT NULL DEFAULT "john"
+	name VARCHAR(30) NOT NULL
+	beer_id (integer, not null)
+	PRIMARY KEY(id)
+	FOREIGN KEY(beer_id) references beers(id)
+	);

@@ -1,0 +1,29 @@
+figure out what the users, movies and actors tables look like
+
+Ruby on Rails
+-------------
+imdb
+	users
+
+	id (primary key) | username | hashed password | Date of Birth | favorite movies (foreign key) | favorite actors (foreign key)
+	-----------------------------------------------------------------------------------------------------------------------------
+Ex:  1               | user1234 | *************** | May 1st 1994  | 19, 55, 90, 45                | 87, 47, 23, 55	
+	
+	movies
+
+	id (primary key) | rating | title | genre      
+    -----------------------------------------
+
+	actors
+
+	id (primary key) | name | movie_id (foreign key)
+	------------------------------------------------
+
+	movie_reviews
+
+	id (primary key) | movie_id (foreign key) | user_id (foreign key)| review
+	------------------------------------------------------------------------
+
+	actor reviews
+
+	id (primary key) | actor_id (foreign key) | user_id (foreign key) | review

@@ -1,0 +1,32 @@
+Everything should go inside the function write input and output
+Write a function that takes in two numbers and returns whether they are greater than 3
+
+function greatThanThree(x,y){
+	if((x>3)&&(y>3)){
+		return true;
+	}else
+		return false;
+}
+without > sign:
+
+function greatThanThree(x,y){
+	var listFal = [0,1,2,3];
+	if ((x.indexOf(listFal)!=-1)&&((y.indexOf(listFal != -1)){
+		return false;
+	}else if(((x+"").indexOf("-")!=-1)&&(y+"".indexOf("-")!=-1)){
+		return false;
+	}else{
+		return true;
+	}
+}
+Write a function named Count Letter that takes in a string and a letter and returns the number of times that letter appears in the string
+
+function countLetter(str,let){
+	for (var i=0; i<str.length;i++){
+		var letCount = 0;
+			for(var i=0; i<str.length; i++){
+				if(str[i]==let) letCount}}
+			}
+			return letCount;
+	}
+}

@@ -1,0 +1,77 @@
+var arO = [1,2,3];
+var arT = [3,4,5]
+var arT = [4,5,6,1]; -> [1,4,5,6]
+
+[4,10]
+[1,2,3,10]
+
+return 1
+
+//edge cases for this if arrays were different sizes  
+function retComElAnotherWay(arrOne, arrTwo){
+    arrOne = arrOne.sort();
+    arrTwo = arrTwo.sort();
+
+    for (var i=0; i<arrOne.length; i++){ //1
+        // if (arrOne[i] == arrTwo[i]){
+        //     return arrOne[i];
+        // } //edge cases make this not work
+        if (arrTwo.indexOf(arrOne[i]) > -1){
+            return arrOne[i];
+        } //this has an edge case too if arrOne is longer than arrTwo then the common element will take longer to find
+    }
+}
+
+function retComElEvenBetter(arrOne, arrTwo){
+    var arrToLoopOver;
+    var arrToCheck;
+
+    if (arrOne.length > arrTwo.length){
+        arrToLoopOver = arrTwo.sort();
+        arrToCheck = arrOne.sort();
+    }else {
+        arrToLoopOver = arrOne.sort();
+        arrToCheck = arrTwo.sort();
+    }
+
+    for (var i=0; i<arrToLoopOver.length; i++){ //1
+        if (arrToCheck.indexOf(arrToLoopOver[i]) > -1){
+            return arrToLoopOver[i];
+        }
+    }
+}
+
+function retComElBetter(arrOne, arrTwo){
+    var arrToLoopOver;
+    var arrToCheck;
+    if (arrOne.length > arrTwo.length){
+        arrToLoopOver = arrTwo;
+        arrToCheck = arrOne;
+    }else {
+        arrToLoopOver = arrOne;
+        arrToCheck = arrTwo;
+    }
+
+    for (var i=0; i<arrToLoopOver.length; i++){ //1
+        if (arrToCheck.indexOf(arrToLoopOver[i]) > -1){
+            return arrToLoopOver[i];
+        }
+    }
+}
+
+function retComEl(arrOne, arrTwo){
+    for (var i=0; i<arrOne.length; i++){ //1
+        for (var j=0; j<arrTwo.length; j++){
+            if (arrOne[i] == arrTwo[j]){ // 1 == 1
+                return arrOne[i];
+            }
+        }
+    }
+}
+
+
+
+console.log(retComEl(arO, arT)); //this is how I would execute the function
+
+// how can you solve this in a different way 
+// how would you change this to make it work for multiple common elements

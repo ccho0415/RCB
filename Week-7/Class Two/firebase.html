@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<!-- Calling for Firebase JS -->
+<script src = "https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+<script>
+//Object that defines which specific Firebase you are using
+  var config = {
+    apiKey: "AIzaSyCBAcWIo-hTx9FzrEdNwTp5h9oVUkgntkk",
+    authDomain: "fir-class-activity-7c6e8.firebaseapp.com",
+    databaseURL: "https://fir-class-activity-7c6e8.firebaseio.com",
+    storageBucket: "fir-class-activity-7c6e8.appspot.com",
+    messagingSenderId: "434673336778"
+  }
+  // Start the App
+    firebase.initializeApp(config);
+  //Gets the Database service for the default app or a given app
+  var data = firebase.database();
+
+</script>
+
+</body>
+</html>

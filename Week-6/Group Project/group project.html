@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>News Search</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+        <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+        <script type="text/javascript"></script>
+        <script src="https://use.fontawesome.com/b3d70bac42.js"></script>
+        <link rel ="stylesheet" href="style.css">
+        </head>
+  <body>
+    <div class = "container">
+      <div id = "title" class ="jumbotron">
+         <i class="fa fa-newspaper-o fa-5x"></i>
+          <strong id = "title" class = "text-center" >New York Times Search</strong>
+      </div>
+    </div>
+    <div class = "container">
+       <div id = "searchparam" class="panel panel-default">
+        <div class = "panel-heading ">
+           <strong class = "text-center">
+              <span id = "listicon" class = "glyphicon glyphicon-list-alt"></span>
+              Search Parameters
+           </strong>
+              </div>
+        <div class="panel-body">
+          <div id = "term" class = "container search">
+            <h5>Search Term: </h5>
+              <input type="text" class="form-control" placeholder="Text input">
+            </div>
+                <div id = "breaks" class = "container">
+                 <div class = "row">
+                    <br>
+                  </div>
+                </div>
+          <div id = "records" class = "container search">
+            <h5>Number of Records to Retrieve </h5>
+              <input type="text" class="form-control" placeholder="Text input">
+          </div>
+              <div id = "breaks" class = "container" >
+                <div class = "row">
+                  <br>
+                </div>
+              </div>
+          <div id = "start" class = "container search" >
+            <h5>Start Year (Optional): </h5>
+              <input type="text" class="form-control" placeholder="Text input">
+          </div>
+              <div id = "breaks" class = "container" >
+                <div class = "row">
+                  <br>
+                </div>
+              </div>
+          <div id = "start" class = "container search" >
+            <h5>End Year (Optional): </h5>
+              <input type="text" class="form-control" placeholder="Text input">
+          </div>
+              <div id = "breaks" class = "container" >
+                <div class = "row">
+                <br>
+                </div>
+              </div>
+          <div id = "buttonplace" class = "container" >
+            <button class="btn btn-default" type="submit">
+              <span id = "searchicon" class = "glyphicon glyphicon-search"></span>
+                Search
+            </button>
+            <button class="btn btn-default" type="submit">
+            <span id = "trashicon" class = "glyphicon glyphicon-trash"></span>
+                Clear Results
+            </button>
+          </div>
+        </div>
+      </div>
+   </div>
+  <div class = "container">
+    <div id = "results-panel" class = "panel panel-default">
+      <div class = "panel-heading">
+        <strong class = "text-center">Results:</strong>
+          <div id= "results" class = "panel-body"></div>
+      </div>
+    </div>
+<script>
+var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+url += '?' + $.param({
+  'api-key': "bd02f499a8474a05bd68ce25460bbc9f"
+});
+$.ajax({
+  url: url,
+  method: 'GET',
+}).done(function(result) {
+  console.log(result);
+}).fail(function(err) {
+  throw err;
+});
+</script>
+                          </body>
+                        </html>

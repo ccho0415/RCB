@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>Reservations</h1>
+
+go to this url:
+
+/make-reservation
+
+<!-- method="POST" action="add-reservation" -->
+
+
+<script src="https://code.jquery.com/jquery.js"></script>
+<script type="text/javascript">
+	$.ajax({
+	    type: 'GET',
+	    url: '/all-reservations',
+	    success: function(data){
+	        for (var i=0; i<data.length; i++){
+	        	var str = "";
+	        	var div = $('<div>');
+	        	str += data[i].email + data[i].phone + data[i].fullName + data[i].uniqueId;
+
+	        	div.text(str);
+
+	        	$('body').prepend(div);
+	        }
+	    }
+	});
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

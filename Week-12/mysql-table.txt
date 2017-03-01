@@ -1,0 +1,9 @@
+code to create table:
+CREATE TABLE summoners (
+	name VARCHAR(20) NOT NULL,
+	champion VARCHAR(20) NOT NULL, 
+	rank VARCHAR(20), 
+	id INTEGER(11) AUTO_INCREMENT NOT NULL
+)
+code to remove row:
+DELETE FROM summoners WHERE id = #;

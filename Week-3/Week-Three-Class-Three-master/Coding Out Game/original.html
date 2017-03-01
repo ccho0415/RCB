@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>RPS</title>
+    <style media="screen">
+      img {
+        width: 200px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Choose r, p, s to play</p>
+    <div id="displayResults">
+      Game Results Go Here
+    </div>
+
+    <script type="text/javascript">
+      // 1. computer pick choice of rock paper scissors
+      // 2. user presses rocks paper scissors
+      // 3. compare see who wins
+      // 4. alert who wins
+
+      var options = ['r', 'p', 's'];
+      var wins = 0;
+      var losses = 0;
+      var ties = 0;
+      var guesses = [];
+      var display = document.querySelector("#displayResults");
+
+      var imageSound = {
+        rock : {
+          img : "http://weknowyourdreams.com/images/rock/rock-03.jpg",
+          sound : "https://p.scdn.co/mp3-preview/b29a2b925b9654e0efaaff37504fd234307e0ad8"
+        },
+        paper : {
+          img : "https://cdn.tutsplus.com/craft/uploads/2013/11/14-snowflakes-lay-paper-copy.jpg",
+          sound : "https://p.scdn.co/mp3-preview/5ff7f7b7d2af1a747da275bed3c49054c01b5b1c"
+        },
+        scissors : {
+          img : "https://images-na.ssl-images-amazon.com/images/I/71AgdoNhdML._SL1500_.jpg",
+          sound : "https://p.scdn.co/mp3-preview/7cef811eaeb7c7b98245750e73d9d68e9008f317"
+        },
+        tie : {
+          img : "http://efdreams.com/data_images/dreams/tie/tie-06.jpg",
+          sound : "https://p.scdn.co/mp3-preview/7cef811eaeb7c7b98245750e73d9d68e9008f317"
+        }
+
+      }
+
+      function displayResults(whoWon, k, c, imag, snd){
+        var string = '<p>' + whoWon + '</p>';
+        string += '<p>User chose: ' + k + '<p>';
+        string += '<p>Computer chose: ' + c + '<p>';
+        string += '<p>Wins: ' + wins; + '</p>';
+        string += '<p>Losses: ' + losses; + '</p>';
+        string += '<p>Ties: ' + ties; + '</p>';
+        string += '<p>Your Guesses: ' + guesses ; + '</p>';
+        string += "<img src=" + imag + ">";
+        var audio = new Audio(snd);
+        audio.play();
+
+        display.innerHTML = string;
+      }
+
+      document.onkeyup = function(event){
+        var key = event.key;
+        if ((key == 'r') || (key == 'p') || (key == 's')){
+          if (guesses.length < 5){
+            guesses.push(key); //update the guesses that the user guessed
+
+            var computerChoice = options[Math.floor(Math.random()*options.length)];
+
+            if (key == 'r' && computerChoice == 'p'){
+              losses++;
+              displayResults("computer won", key, computerChoice, imageSound.rock.img, imageSound.rock.sound);
+            }else if(key == 's' && computerChoice == 'p'){
+              wins++;
+              displayResults("user won", key, computerChoice, imageSound.scissors.img, imageSound.scissors.sound);
+            }else if(key == 'p' && computerChoice == 'r'){
+              wins++;
+              displayResults("user won", key, computerChoice, imageSound.paper.img, imageSound.paper.sound);
+            }else if(key == 's' && computerChoice == 'r'){
+              losses++;
+              displayResults("computer won", key, computerChoice, imageSound.scissors.img, imageSound.scissors.sound);
+            }else if(key == 'r' && computerChoice == 's'){
+              wins++;
+              displayResults("user won", key, computerChoice, imageSound.rock.img, imageSound.rock.sound);
+            }else if(key == 'p' && computerChoice == 's'){
+              losses++;
+              displayResults("computer won", key, computerChoice, imageSound.paper.img, imageSound.paper.sound);
+            }else if(key == computerChoice){
+              ties++;
+              displayResults("tie", key, computerChoice, imageSound.tie.img, imageSound.tie.sound);
+            }
+          }else{
+            display.innerHTML = "You've played this way too much";
+          }
+
+        }
+      }
+
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+<style media="screen">
+  body {
+    height : 1000px;
+    width: 500px;
+    color: black;
+    background-color: aliceblue;
+    margin-bottom: 10px;
+  }
+</style>
+<body>
+<ul>
+	{{#each wishes}}
+	<li>
+	<p>ID: {{this.id}}</p>
+	<p>Wish: {{this.wish}}</p>
+	</li>
+	{{/each}}
+</ul>
+<div>
+	<form action= "/" method= "POST">
+		<textarea ="text" name ="wish"></textarea>
+		<button type ="submit">Submit</button>
+	</form>
+</div>
+</body>
+</html>

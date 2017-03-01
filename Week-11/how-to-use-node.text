@@ -1,0 +1,31 @@
+the steps that you would take to create a node application
+
+navigate to your desktop
+
+mkdir <foldername>
+
+cd into folder
+
+touch .gitignore
+    list of files, folders that you want ignored
+    keys.js
+    .DS_Store
+
+ls -la
+    shows you hidden files and folders
+
+npm init -> creates a package.json file
+
+figure out what npm packages you want to use
+
+install them by doing:
+    npm install <package name> --save
+    so that way the package gets put into the package.json file with the version number
+
+create a .js file
+
+open up sublime 
+
+go into terminal
+
+node <filename>

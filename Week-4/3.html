@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<button id="b">click me</button>
+<script type="text/javascript">
+
+    var name = "Sheri";
+    var skills = "jill of all trades";
+
+    var rob = {
+        name: "rob",
+        skills: "jack of all trades",
+        says: function(){
+            // console.log("hey there");
+            console.log('hi my name is ' + this.name + ". I'm a " + this.skills);
+        }
+    }
+
+    document.querySelector("#b").onclick = rob.says.bind(rob);
+
+
+</script>
+</body>
+</html>

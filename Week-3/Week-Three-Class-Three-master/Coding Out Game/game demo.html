@@ -1,0 +1,119 @@
+<!-- How to manipulate HTML using code -->
+
+<!-- Make sure the HTML knows what exactly to edit -->
+document.querySelector("#id of div") || document.querySelector(".class of div")
+    <div id ="id of div">
+        Text Goes Here
+    </div>
+<!-- Edit the actual HTML -->
+results.innerHTML = "newtext"
+
+<!-- What should happen -->
+results
+    <div id="id of div">new text 
+    </div>
+
+<!-- How to use this for RPS homework  -->
+var display = document.querySelector("#displayResults")
+    
+    if (key == "r" && computerChoice == "p"){
+        var string ="<p> computer won </p>";
+        strong += "<p> User chose:" + key + "</p>";
+        display.innerHTML= "computer won";
+    }
+    if (key == "r" && computerChoice == "r"){
+        display.innerHTML = "tie";
+    }
+    if (key == "r" && computerChoice == "s"){
+        display.innerHTML = "user won";
+    }
+
+<!-- How to make this a function -->
+    function displayResults(whoWon, key, computerChoice){
+        var display = document.querySelector("displayResults");
+        var string = "<p>" + whoWon + "</p>";
+        string+= "<p> User chose" + key + "</p>";
+        string+="<p> Computer chose" + computerChoice +"</p>";
+        display.innerHTML = string;
+    }
+<!-- Then write this inside of each if statment -->
+    displayResults("winner (computer / user) won", key, computerChoice);
+
+<!-- Full Example -->
+    function displayResults(whoWon, k, c){
+        var display = document.querySelector("#displayResults");
+        var string = '<p>' + whoWon + '</p>';
+        string += '<p>User chose: ' + k + '</p>';
+        string += '<p>Computer chose: ' + c + '</p>';
+        display.innerHTML = string;
+      }    
+    if (key == 'r' && computerChoice == 'p'){
+        displayResults("computer won", key, computerChoice);
+        }else if(key == 's' && computerChoice == 'p'){
+          displayResults("user won", key, computerChoice);
+        }
+<!-- Now let's add in wins losses and ties -->
+<!-- add these variables -->
+    var wins = 0;
+    var lose = 0;
+    var guesses = [];
+<!-- Write this into the function  -->
+    function displayResults(whoWon, key, computerChoice){
+        var display = document.querySelector("displayResults");
+        var string = "<p>" + whoWon + "</p>";
+        string+= "<p> User chose" + key + "</p>";
+        string+="<p> Computer chose" + computerChoice +"</p>";
+        string+="<p> Wins" + wins; +"</p>";
+        string+="<p> Losses" + losses; +"</p>";
+        string+="<p> Ties" + ties; +"</p>";
+        string+="<p> Your Guesses" + guesses; +"</p>";               
+        display.innerHTML = string;
+    }
+     if (key == "r" && computerChoice == "p"){
+<!-- Write this into the if statements-->
+            losses++; 
+            displayResults("computer won", key, computerChoice);
+<!-- Don't forget to add this -->
+     if ((key == 'r') || (key == 'p') || (key == 's')){
+<!--update the guesses that the user guessed -->
+        guesses.push(key); 
+        <!-- Put the rest of the if statemenets here -->
+        }
+
+<!-- Now let's add pictures to everything! -->
+<!-- Make an object at the top -->
+    var imageSound = {
+        rock : {
+        img : "img link"
+        sound : "add a mp3 from either folder or link"
+        },
+        paper : {
+        img : "img link"
+        sound : "add a mp3 from either folder or link"
+        },
+        scissors :{
+        img : "img link"
+        sound : "add a mp3 from either folder or link"
+        }
+
+    }
+<!-- How to call these objects -->
+    imageSound.rock.img
+    imageSound.rock.sound
+
+<!-- Add this to the function -->
+    function displayResults(whoWon, key, computerChoice, image, sound){
+        string += "<img src=" + image + ">";
+        var audio = new Audio(sound);
+        audio.play();
+    }
+
+<!-- Add this to the if statements -->
+    if (key == "r" && computerChoice =="p"){
+        losses++;
+        displayResults("computer won", key, computer Choice , imageSound.rock.img, imageSound.rock.sound);
+    }
+<!-- Don't forget to style the images with css -->
+    <style type="text/css">
+        
+    </style>

@@ -1,0 +1,13 @@
+Prototype
+	How is the constructor connected to the prototype
+		The constructor has one prototype
+Constructor
+	-> Create Objects on the fly
+var obj1 = new Constructor(...);
+var obj2 = new Constructor(...);
+
+Is the prototype of obj1 different from the prototype of obj2?
+	No because we are using the same constructor
+If I edit the prototype of the constructor, do all of my objects have it?
+	Yes, because there's only one to rule them all.
+objects created with a constructor have a property called __proto__ that points to the prototype of the constructor that was used to create that object

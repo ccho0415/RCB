@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+    var a = "Christa";
+
+    function levelOne(){
+
+        function levelTwo(){
+            //var a; //the variable declaration of a gets hoisted up here without an assignment
+            console.log(a);
+
+
+            var a = "Kathleen";
+        }
+
+        levelTwo();
+    }
+
+    levelOne(); //print out undefined
+
+</script>
+</body>
+</html>

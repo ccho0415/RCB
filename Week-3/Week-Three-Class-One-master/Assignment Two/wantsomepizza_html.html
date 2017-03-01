@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Want some pizza?</title>
+</head>
+
+<body>
+
+  <script>
+    var pizzaCount = 0;
+    var wantPizza;
+    while (true) {
+      wantPizza = confirm('Want some pizza?');
+      if (wantPizza) {
+        pizzaCount++;
+        alert('You have ' + pizzaCount + ' slices!');
+      } else {
+        alert('You have ' + pizzaCount + ' slices! Goodbye!');
+        break;
+      }
+    }
+  </script>
+
+</body>
+
+</html>

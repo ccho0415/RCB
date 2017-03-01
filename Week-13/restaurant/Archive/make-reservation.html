@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>Make Reservation</h1>
+
+<!-- method="POST" action="add-reservation" -->
+<form>
+	<input id="fullName" placeholder="fullName"></input>
+	<input id="phone" placeholder="phone"></input>
+	<input id="email" placeholder="email"></input>
+	<input id="uniqueId" placeholder="uniqueId"></input>
+
+	<button>submit</button>
+</form>
+
+<script src="https://code.jquery.com/jquery.js"></script>
+<script type="text/javascript">
+	$('button').on('click', function(event){
+		event.preventDefault();
+		var reservation = {
+			fullName: $('#fullName').val(),
+			phone: $('#phone').val(),
+			email: $('#email').val(),
+			uniqueId: $('#uniqueId').val(),
+		}
+
+		$.ajax({
+		    type: 'POST',
+		    url: '/add-reservation',
+		    data: reservation,
+		    success: function(data){
+		        alert('done');
+		        console.log(data);
+		    }
+		});
+
+
+
+	});
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

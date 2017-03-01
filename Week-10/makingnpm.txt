@@ -1,0 +1,8 @@
+npm init
+	- makes a package json file
+npm init -y
+	- runs the default options
+npm install thePackageName --save
+	- this makes a node_modules folder if it's not there
+	- and then adds the package into it
+	- and puts all the dependencies into it as well

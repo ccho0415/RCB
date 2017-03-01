@@ -1,0 +1,145 @@
+<!-- Students: Our work lies in the js file. -->
+
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Stopwatch</title>
+
+    <!-- Our CSS style sheet -->
+    <style type="text/css">
+      /* Students: Our work lies in the js file. */
+
+      body { /* Visual */ background: black;}
+
+      #display {
+
+        /* Typography */
+        text-align: center;
+        font-size: 120px;
+        font-family: monospace;
+
+        /* Visual */
+        background: black;
+        color: green;
+      }
+
+      #wrapper {
+
+        /* Positioning */
+        margin: 50px auto 0;
+
+        /* Box-model */
+        width: 500px;
+
+      }
+
+      #buttons { /* Typography */ text-align: center;}
+
+      button {
+
+        /* Box-model */
+        height: 50px;
+        width: 100px;
+
+      }
+
+      #laps {
+
+        /* Positioning */
+        margin-top: 20px;
+
+        /* Box-model */
+        overflow: auto;
+        width: 100%;
+        height: 200px;
+
+        /* Typography */
+        text-align: center;
+
+        /* Visual */
+        background: white;
+
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div id="wrapper">
+
+      <div id="display">00:00</div>
+
+      <!-- Div containing our stopwatch controls -->
+      <div id="buttons">
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+        <button id="reset">Reset</button>
+        <button id="lap">Lap</button>
+      </div>
+
+      <div id="laps"></div>
+
+    </div>
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.js">
+    </script>
+    <!-- Script -->
+    <script type="text/javascript">
+    // Variables
+    //
+    var lapnumber = 0;
+    var counter = 0;
+    var timer;
+    function timeUp(){
+            counter++;
+            var currenttime = timeConversion(counter);
+            $("#display").text(currenttime);
+  }
+    function timeConversion(){
+      var displayCounter;
+      var minutes = Math.floor(counter/60);
+        if (counter<10){
+          displayCounter = "00:0"+ counter;
+        }else if(counter < 60){
+          displayCounter = "00:"+counter;
+        }else if(minutes > 0){
+          var n = counter - 60;
+          displayCounter == "0"+minutes+"0:" + n;
+        }
+
+        return displayCounter;
+    }
+    // Let's add functions to the buttons
+    // start button go up by 1 and display on page
+    $("#start").on ("click", function(){
+      timer = setInterval(timeUp,1000);
+  
+    });
+    // stop timer
+    $("#stop").on ("click", function(){
+      clearInterval(timer);
+    });
+    //reset the number and display on page
+    $("#reset").on ("click", function(){
+      clearInterval(timer);
+      counter = 0;
+      $("#display").text(timeConversion(counter));
+
+    });
+    // lap 1 the time and then put lap two and the time
+    $("#lap").on ("click", function(){
+      lapnumber++
+      var currenttime = timeConversion(counter)
+      $("#laps").prepend("<p> Lap " + lapnumber +" :"+ currenttime + "</p>");
+    });
+    </script>
+
+  </body>
+
+</html>
+

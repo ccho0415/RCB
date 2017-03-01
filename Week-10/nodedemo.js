@@ -1,0 +1,1 @@
+console.log("Loretta's favorite place is the library");

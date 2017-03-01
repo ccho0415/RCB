@@ -1,0 +1,77 @@
+<!-- 
+1. User chooses r p s on keyboard representing rock, paper or sciors
+2. Computer chooses a random value in a list of r p s
+3. We determine if the user won or not
+	u rock c scissors w
+	u rock c paper l
+	u scissors c paper w
+	u scissors c rock l
+	u paper c rock w
+	u paper c scissors 1 -->
+
+<!-- Go to Week Three Class Three for a more detailed break down on the rock paper scissors -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rock Paper Scissors</title>
+</head>
+<body>
+
+	 <script type="text/javascript">
+	 	   var computerg=["r", "p", "s"]
+	 	   var wins = 0
+	 	   var losses = 0 
+	 	   var ties = 0
+
+
+		   
+        document.onkeyup = function(event) {
+        var userinput = String.fromCharCode(event.keyCode).toLowerCase();
+        var computer = computerguess[Math.floor((Math.random()) * computerg.length)];
+		   		console.log(computer)
+		   	if ((userinput === "r" || userinput === "s" || userinput === "p" ))
+    		if (userinput === computer) {
+    			ties++;
+    		}
+    		if (userinput === "r" && computer === "s"){
+    			console.log(win)
+    			wins++;
+    		}
+    		if (userinput === "r" && computer === "p"){
+    			losses++;
+    		}
+    		if (userinput === "s" && computer === "p"){
+    			
+    		}
+    	 	if (userinput === "s" && computer === "r"){
+    	 		lose
+    	 	}
+    	 	if (userinput === "p" && computer === "r"){
+    	 		win
+    	 	}
+    	 	if (userinput === "p" && computer === "s"){
+    	 		lose
+    	 	}
+ }
+		
+			var html = "<p>Press r,p or s to start playing!</p>" +"<p>wins:"+ wins + "</p>" + "<p>losses:" + losses + "</p>" + "<p>ties:" + ties + "</p>"
+		
+		// function (win):
+		// 	console.log(win)
+
+		
+
+		// alert("user guess: " + userinput);
+  //       alert("computer guess: " + computer);
+
+
+
+
+
+
+	</script>
+
+</body>
+</html>

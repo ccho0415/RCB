@@ -1,0 +1,68 @@
+Attack Methods
+Social Engineering:
+	Tricking end-users, phising
+Hacking:
+	Breaking into systems using exploits
+
+Malicious Insider: 
+	Trusted individual with malicious motives
+User Error:
+	Someone accidentally leaks data
+Physical:
+	Theft of equipment
+Denial of service:
+	Bringing systems offline so they do not work
+Mobile:
+	A whole new era of vulnerabilites
+
+Increasing Threats:
+	Why?
+		Internt connectivity is everywhere:
+			Including nations where we lack judicial or extradition privileges
+		Rise of digital currencies like BitCoin:
+			Allows for untraceable, anonymous payment and demands
+		"Dark Web"
+			Untraceable, anonymous internet
+			Marketplaces that have surfaced for purchase of drugs, weapons, malware, denail of service attacks, hacking, personal information, etc.
+
+How do we protect against risks?
+	Key Components for Secure Applications:
+		Secure User Authentication
+			Almost all apps with any level of personalization, editing ability or private content require per-user authentication.
+		User authentication requires security
+			Password requiremenets, secure hashes, encryption, intrustion prevention, multifactor authentication
+	Many Applications have integrated with existing authentication providers
+	Role-based Access:
+		Front-end
+			Corporate custmoners will need to differentiate access for adminstrators of an application vs end-users. Segregation data so users can only access what they need access to.
+		Back-end
+			Measures like Multifactor Authentication should be a requirement
+			Keep your production and backup environment secure.
+	Vulnerability Scanning/ Patching
+		Services and products exist to scan your applications and find vulnerabilites
+			Peneration Testing: Paid: "white-hat" professionals who think like an attack to test your apps for expliots.
+		Remember about the application\web\database engines you are using
+			An application with secure code running on an old version of MySQL( or MongoDB) is not secure at all.
+		If you don't plan this out in advance, one of your corporate custmoners will audit you and find out anyway!
+	Audit Logs
+		If an attack happens, will you have the logs to
+			Find out what happened
+			Find out where the attack came form
+			End an ongoing attack
+			Prevent future attacks
+			Find out what data was compromised
+			Find out if any compromise\backdoor still exists
+		Hackers can spend 200+ days inside systems before being noticed
+	Honeypots
+		Fake points of entry into an application\ infrastructure designed to detect intrusion
+			Fake interface to an application such as an FTP interface that does not require credentials. No one should be accessing it, but it is a tempting target for an attacker and if they do access it, it sets off alarms
+
+			Fake record in a database. No one should be access it, but if someone is browsing through a database when they shouldn't be or attempting to extract the entire database, an alarm will notify application admins.
+	Programming Standards
+		Follow programming standards
+			No corporate custmoner likes applications that only one person knows how to modify. Some call this job security. businesses call this key man risk.
+		Applications must integrate with today's technology
+			If your app requires a specific version of Java, specific web browsers, administrative rights on a PC, etc., you are going to lose traction in the corporate 
+Plan security before building your applicaiton, it's much tougher to implement once you have people using it
+Don't blindly trust your application hosting provider
+Cyber security is not an integral part of all developer and infrastructure careers. (ISC)^2 and ISACA

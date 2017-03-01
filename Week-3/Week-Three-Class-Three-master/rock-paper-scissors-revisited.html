@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<!-- pseudo code
+	1. computer pick choice of r p s
+	2. user presses r p s
+	3. compare results
+	4. determine who wins or loses
+ -->
+<head>
+    <title> RPS </title>
+</head>
+<body>
+    <script type ="text/javascript">
+
+        //writing on the document
+        document.write('hi');
+        document.write('<br> people');
+        //Step One
+        //creating an array, splitting options by commas
+        var options = ["r", "p" , "s"];
+        //Step Two
+        //this function is telling the website to capture key inputs
+        document.onkeyup = function (event){ 
+            //event is storing what key is pushed
+            var key = event.key;
+            // printing what key is pressed into the console
+            console.log(key);
+        // Deciding Computer's choice for them (To see if this part of the code works)
+            // var computerChoice = "p";
+            // if (key == 'r' && computerChoice == 'p'){
+            // console.log('computer won'); }
+
+
+            // the computer should print out computer won everytime r is pressed
+
+
+        //Now let's make the computer's choice random!
+            // Use the function Math.random()
+            //Regular Math.random() only picks between 0 and 1
+                // We can mod it so that it picks below the length of the array 
+                    //Math.random()*options.length
+                        //it'll print out decimals though. How do we get it to round?
+                            //Math.floor(Math.random()*options.length)
+        // Random Computer Choice
+            var computerChoice = options[Math.floor(Math.random()*options.length)];
+        // Now let's write out all the possible options
+
+        if (key == 'r' && computerChoice == 'p'){
+          console.log('computer won');
+        }else if(key == 's' && computerChoice == 'p'){
+          console.log('the user won');
+        }else if(key == 'r' && computerChoice == 'r'){
+          console.log('this is a tie');
+        }else if(key == 'p' && computerChoice == 'r'){
+          console.log('the user won');
+        }else if(key == 's' && computerChoice == 'r'){
+          console.log('computer won');
+        }else if(key == 'r' && computerChoice == 's'){
+          console.log('user won');
+        }else if(key == 'p' && computerChoice == 's'){
+          console.log('computer won');
+        }else if(key == computerChoice){
+          console.log('this is a tie');
+        }
+
+        console.log(key);
+      }
+      // we got a working game! (in the console)
+
+
+    </script>
+
+</body>
+</html>

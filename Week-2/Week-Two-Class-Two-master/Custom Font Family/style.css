@@ -1,0 +1,22 @@
+.Blurb1{
+	font-family: 'Cormorant Garamond', serif;
+	color: #4286f4;
+	line-height: 35px;
+
+
+}
+.Blurb2{
+	font-family:'Indie Flower', cursive;
+	color: #da7ded;
+	line-height: 35px;
+
+}
+.Blurb3{
+	font-family: 'Cabin', sans-serif;
+	color: #55c155;
+	line-height: 35px;
+}
+.title{
+	color: #7c4012;
+	font-family: 'Lobster', cursive;
+}

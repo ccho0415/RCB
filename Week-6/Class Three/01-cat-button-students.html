@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>The Magical Cat Button</title>
+</head>
+
+<body>
+<!-- Creates the Button -->
+  <button id="cat-button">magical cat button</button>
+<!-- Div Called Images. Where the Images will be placed -->
+  <div id="images">
+  </div>
+<!-- Calls Javascript and Jquery -->
+  <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script type="text/javascript">
+    //Execute this function when button is clicked
+    $("#cat-button").on("click", function() {
+
+      //URL for the API
+      var queryURL = "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=cats";
+
+      //Running the AJAX Query to the QueryURL and grabs the data from it (JSON)
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      })
+
+      //When you get the information from the API excute this function
+      .done(function(response) {
+
+        //Grab the URL from the image from the API Data
+        var imageUrl = response.data.image_original_url;
+
+        //Create a new image tag and call it catImage
+        var catImage = $("<img>");
+
+        //Set the attributes for the catImage, SRC Link, Alt Attribute
+        catImage.attr("src", imageUrl);
+        catImage.attr("alt", "cat image");
+
+        //Adds catImage to image div. Adds it before the last one posted
+        $("#images").prepend(catImage);
+
+    // How to make it one command lines 30-44
+
+    //$("#images").prepend($("<img>").attr("src", response.data.image_original_url).attr("alt", "cat image"));
+      });
+    });
+  </script>
+</body>
+
+</html>
