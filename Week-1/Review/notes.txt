@@ -1,0 +1,19 @@
+Head Contains Meta Data (Information on File itself)
+Img tag is a self closing tag
+Src = Source 
+target = "__blank"
+
+Once you put a float in, it'll float everything else after. To clear the floats just add clear:float to the next element.
+You can also use overflow: auto to make sure things stay in their own container
+Relative: Move elements relative to their original position in the flow
+Absolute: Move element relative to their next element up (the parent or body if no parent).
+Fixed: Move element relative to view port
+
+Hiding an Element - 
+Takes an element out of the flow
+display:none
+Makes it not seen but the space it takes up is still there
+visibility: hidden
+
+Makes it so that no matter what padding / border there is it will adhere / adjust to the total width
+box-sizing: border-box;
