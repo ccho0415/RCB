@@ -1,0 +1,5 @@
+Do this function every time amount of time (1000 miliseconds = 1 second)
+var interval = setInterval(function, time)
+
+Stop the interval function
+clearInterval(interval)
