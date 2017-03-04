@@ -1,0 +1,21 @@
+<h1>Chirpy</h1>
+
+<h2>Create a new chirp</h2>
+
+<form action="/chirps/create" method="POST">
+  <input type="text" name="name" placeholder="what's your name?"></input>
+  <br><br>
+  <textarea type="text" name="chirp" placeholder="what's your chirp?"></textarea>
+  <br><br>
+  <input type="submit"></input>
+</form>
+
+<h2>Chirps</h2>
+
+<ul>
+  {{#each chirps}}
+    <li>
+      <a href="/chirps/{{this.id}}">{{this.name}} | {{this.chirp}}</a>
+    </li>
+  {{/each}}
+</ul>

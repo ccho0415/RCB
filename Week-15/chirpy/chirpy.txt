@@ -1,0 +1,6 @@
+Table
+	chirps
+		id primary key auto incrementing
+		name
+		chirp
+		timestamps
