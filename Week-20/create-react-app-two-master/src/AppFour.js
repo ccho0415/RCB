@@ -29,6 +29,16 @@ class AppFour extends Component {
       catName: evt.target.value
     })
   }
+  handleGiveCatAway = (evt) => {
+    evt.preventDefault();
+    let catid = evt.target.getAttribute('data-catid')
+    console.log(catid)
+    let current = this.state.robsCats
+    let robsCats = current.filter((cat, index) => index != catid);
+    this.setState({
+      robsCats
+    })
+  }
 
   render() {
     return (
@@ -37,7 +47,7 @@ class AppFour extends Component {
         
         <br /><br />
 
-        {this.state.robsCats.map((cat, index) => <Cat key={index} catName={cat} />)}
+        {this.state.robsCats.map((cat, index) => <Cat key={index} catid= {index} catName={cat}  handleGiveCatAway= {this.handleGiveCatAway} />)}
 
         <br /><br />
 
